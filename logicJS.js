@@ -1,6 +1,4 @@
-/**
- * BY:Richard, NAME, NAME
- */
+
 
 /**
  * @param none
