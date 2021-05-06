@@ -1,7 +1,4 @@
-/**
- * BY:NAME, NAME, NAME
- * fabiano
- */
+
 
 /**
  * @param none
