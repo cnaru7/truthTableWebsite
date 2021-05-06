@@ -1,4 +1,8 @@
 /**
+ * BY:NAME, NAME, NAME
+ */
+
+/**
  * @param none
  * @returns none
  * solveEquation() will create a truth table with solutions of equation textbox input.
