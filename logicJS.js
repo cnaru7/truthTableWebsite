@@ -105,7 +105,15 @@ function zeroFill(number){
     return binaryValue;
 }
 
-function replaceElement(formula, )
+function replaceElement(formula, swap, swapping){
+    var index = 0;
+    for(index = 0; index < formula.length; index++){
+        if(formula[index] == swap){
+            formula[index] = swapping;
+        }
+    }
+    return formula;
+}
 
 /**
  * 
@@ -121,9 +129,8 @@ function solve(formula){
         var binaryValue = zeroFill(i);
         var j = 0;
         for(j = 0; j < temp.length; j++){
-            alert(temp[j]); // RICHARD FIGURE OUT HOW TO REPLACE EVERY "SPECIFIC" ELEMENT IN AN ARRAY.
+            formula = replaceElement(formula, temp[j], binaryValue.charAt(j)); // RICHARD FIGURE OUT HOW TO REPLACE EVERY "SPECIFIC" ELEMENT IN AN ARRAY.
         }
-
     }
     /** 
     a   |  b
