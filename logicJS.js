@@ -24,6 +24,8 @@ function solveEquation(){
 function convertOperator(formula){
     var compare = ["&", "^", "and", "v", "or", "|", "->", "implies", "<=>", "<->", "bijection", "not", "~"];
     var temp = [];
+    var i = 0;
+
     for(i = 0 ; i < formula.length; i++){
         if(compare.includes(formula[i])){
              // if index in certian range convert to && (and), || (or), ! (negation), (!p || q) (implication), == (bijection) 
@@ -54,7 +56,8 @@ function convertOperator(formula){
 function totalCount(formula){
     var temp = []; // temp to hold unique values
     var total = 0; // count exponent
-
+    var i = 0;
+    
     for(i = 0 ; i < formula.length; i++){
         if(formula[i].length === 1 && /[a-z]/i.test(formula[i]) && !temp.includes(formula[i]) ){ // tests regex, size, and make sure we are not counting same string again.
             temp.push(formula[i]); // adding string to array.
@@ -74,7 +77,8 @@ function totalCount(formula){
  */ 
 function unique(formula){
     var temp = []; // temp to hold unique values
-
+    var i = 0;
+    
     for(i = 0 ; i < formula.length; i++){
         if(formula[i].length === 1 && /[a-z]/i.test(formula[i]) && !temp.includes(formula[i]) ){ // tests regex, size, and make sure we are not counting same string again.
             temp.push(formula[i]); // adding string to array.
@@ -83,12 +87,17 @@ function unique(formula){
 
     return temp;
 }
-
+/**
+ * 
+ * @param number is abitrary integer that can be converted in binary 
+ * @returns a 32 bit binary string of number.
+ * by: Richard
+ */
 function zeroFill(number){
     var binaryValue = number.toString(2);
     var originalSize = binaryValue.length;
-    
     var index = 0;
+    
     for(index = 0; index < (32-originalSize); index++){
         binaryValue = "0"+ binaryValue;
     }
@@ -96,16 +105,21 @@ function zeroFill(number){
     return binaryValue;
 }
 
+/**
+ * 
+ * @param formula is an array that contains eqaution.
+ * @returns an array contain truth value solution.
+ */
 function solve(formula){
     // use eval to solve conditional logic
     var temp = unique(formula);
-
     var i = 0;
+    
     for(i = 0; i <= totalCount(formula); i++){
         var binaryValue = zeroFill(i);
         var j = 0;
         for(j = 0; j < formula.length; j++){
-            alert(formula[j]);
+            alert(formula[j]); // RICHARD FIGURE OUT HOW TO REPLACE EVERY "SPECIFIC" ELEMENT IN AN ARRAY.
         }
 
     }
@@ -135,7 +149,6 @@ function solve(formula){
      1      | 1    | 1
      
     */
-
     return 0;
 }
 
