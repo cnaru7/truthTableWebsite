@@ -105,6 +105,8 @@ function zeroFill(number){
     return binaryValue;
 }
 
+function replaceElement(formula, )
+
 /**
  * 
  * @param formula is an array that contains eqaution.
@@ -118,8 +120,8 @@ function solve(formula){
     for(i = 0; i <= totalCount(formula); i++){
         var binaryValue = zeroFill(i);
         var j = 0;
-        for(j = 0; j < formula.length; j++){
-            alert(formula[j]); // RICHARD FIGURE OUT HOW TO REPLACE EVERY "SPECIFIC" ELEMENT IN AN ARRAY.
+        for(j = 0; j < temp.length; j++){
+            alert(temp[j]); // RICHARD FIGURE OUT HOW TO REPLACE EVERY "SPECIFIC" ELEMENT IN AN ARRAY.
         }
 
     }
