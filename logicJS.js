@@ -86,7 +86,7 @@ function unique(formula){
 
 function solve(formula){
     // use eval to solve conditional logic
-    var temp = unique(formula);
+    //var temp = unique(formula);
     alert(totalCount(formula));
     alert(formula);
     for(i = 0; i <= totalCount(formula); i++){
