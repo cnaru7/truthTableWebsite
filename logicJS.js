@@ -89,7 +89,7 @@ function solve(formula){
     //var temp = unique(formula);
     alert(totalCount(formula));
     alert(formula);
-    var i = 0
+    var i = 0;
     for(i = 0; i <= totalCount(formula); i++){
         alert(i);
     }
