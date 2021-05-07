@@ -51,7 +51,7 @@ function convertOperator(formula){
  * 
  * @param formula is an array that contains eqaution.
  * @returns total possible outcomes of equation.
- * by: Richard
+ * @author by: Richard
  */ 
 function totalCount(formula){
     var temp = []; // temp to hold unique values
@@ -73,7 +73,7 @@ function totalCount(formula){
  * 
  * @param formula is an array that contains eqaution.
  * @returns array of unique non-operators.
- * by: Richard
+ * @author by: Richard
  */ 
 function unique(formula){
     var temp = []; // temp to hold unique values
@@ -91,7 +91,7 @@ function unique(formula){
  * 
  * @param number is abitrary integer that can be converted in binary 
  * @returns a 32 bit binary string of number.
- * by: Richard
+ * @author by: Richard
  */
 function zeroFill(number){
     var binaryValue = number.toString(2);
@@ -110,6 +110,7 @@ function zeroFill(number){
  * @param {*} swap is element to be replaced.
  * @param {*} swapping is element that is replacing.
  * @returns array with swapped elements.
+ * @author by: Richard
  */
 function replaceElement(formula, swap, swapping){
     var index = 0;
@@ -131,6 +132,8 @@ function replaceElement(formula, swap, swapping){
  * 
  * @param formula is an array that contains eqaution.
  * @returns an array contain truth value solution.
+ * @author by: Richard
+ * --WIP--
  */
 function solve(formula){
     // use eval to solve conditional logic
@@ -143,6 +146,7 @@ function solve(formula){
         for(j = 0; j < temp.length; j++){
             formula = replaceElement(formula, temp[j], binaryValue.charAt(j)); // RICHARD FIGURE OUT HOW TO REPLACE EVERY "SPECIFIC" ELEMENT IN AN ARRAY.
         }
+        // --WIP-- AFTER REPLACING WE NOW CONVERT ARRAY TO STRING AND USE EVAL FUNCTION TO RETRIEVE BOOLEAN OUTPUT.
     }
     /** 
     a   |  b
