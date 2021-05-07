@@ -11,7 +11,6 @@
 function solveEquation(){
     var equation = document.getElementById('equation').value.replace(/([(!)])/g, ' $1 ').trim(); // adding spaces before every regex so that every alphabet character is unique.
     var formula = equation.replace(/\s+/g, ' ').trim().split(" "); // create array formula to parse and remove any excess whitespace.
-    alert(formula);
 
     document.getElementById('output').innerHTML = totalCount(formula);
 }
@@ -67,9 +66,29 @@ function totalCount(formula){
     return (Math.pow(2, total));
 }
 
+/**
+ * 
+ * @param formula is an array that contains eqaution.
+ * @returns array of unique non-operators.
+ * by: Richard
+ */ 
+function unique(formula){
+    var temp = []; // temp to hold unique values
+
+    for(i = 0 ; i < formula.length; i++){
+        if(formula[i].length === 1 && /[a-z]/i.test(formula[i]) && !temp.includes(formula[i]) ){ // tests regex, size, and make sure we are not counting same string again.
+            temp.push(formula[i]); // adding string to array.
+        }
+    }
+
+    return temp;
+}
+
 function solve(formula){
     // use eval to solve conditional logic
+    var temp = unique(formula);
 
+    
     /** 
     a   |  b
     ---------
@@ -97,3 +116,4 @@ function solve(formula){
      
     */
 }
+
