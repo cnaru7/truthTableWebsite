@@ -90,7 +90,6 @@ function solve(formula){
     alert(totalCount(formula));
     for(i = 0; i <= totalCount(formula); i++){
         alert(i);
-        alert(i.toString(2));
     }
     /** 
     a   |  b
