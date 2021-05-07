@@ -105,7 +105,7 @@ function solve(formula){
     var i = 0;
     for(i = 0; i <= totalCount(formula); i++){
         var binaryValue = zeroFill(i);
-        alert(binaryValue);
+        
     }
     /** 
     a   |  b
