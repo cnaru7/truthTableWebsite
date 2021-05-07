@@ -88,7 +88,7 @@ function zeroFill(number){
     var binaryValue = number.toString(2);
 
     var index = 0;
-    for(index = 0; index < (32 - binaryValue.length); index++){
+    for(index = 0; index < (32); index++){
         binaryValue = "0"+ binaryValue;
     }
 
