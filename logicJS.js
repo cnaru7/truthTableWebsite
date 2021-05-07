@@ -98,14 +98,16 @@ function zeroFill(number){
 
 function solve(formula){
     // use eval to solve conditional logic
-    //var temp = unique(formula);
-    alert(totalCount(formula));
-    alert(formula);
-    
+    var temp = unique(formula);
+
     var i = 0;
     for(i = 0; i <= totalCount(formula); i++){
         var binaryValue = zeroFill(i);
-        
+        var j = 0;
+        for(j = 0; j < formula.length; j++){
+            alert(formula[j]);
+        }
+
     }
     /** 
     a   |  b
