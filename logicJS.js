@@ -88,7 +88,10 @@ function solve(formula){
     // use eval to solve conditional logic
     var temp = unique(formula);
 
-    
+    for(i = 0; i <= totalCount(formula); i++){
+        alert(i.toString(2));
+        
+    }
     /** 
     a   |  b
     ---------
