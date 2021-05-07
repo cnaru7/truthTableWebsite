@@ -91,6 +91,8 @@ function zeroFill(number){
     for(index = 0; index < (32 - binaryValue.length); index++){
         binaryValue = "0"+ binaryValue;
     }
+
+    return binaryValue;
 }
 
 function solve(formula){
