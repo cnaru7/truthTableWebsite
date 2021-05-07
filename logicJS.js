@@ -104,7 +104,13 @@ function zeroFill(number){
 
     return binaryValue;
 }
-
+/**
+ * 
+ * @param {*} formula is an array that contains eqaution.
+ * @param {*} swap is element to be replaced.
+ * @param {*} swapping is element that is replacing.
+ * @returns array with swapped elements.
+ */
 function replaceElement(formula, swap, swapping){
     var index = 0;
     if (swapping == 0){
@@ -112,7 +118,7 @@ function replaceElement(formula, swap, swapping){
     }else{
         swapping = "true";
     }
-    
+
     for(index = 0; index < formula.length; index++){
         if(formula[index] == swap){
             formula[index] = swapping;
