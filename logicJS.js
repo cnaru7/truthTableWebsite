@@ -86,7 +86,7 @@ function unique(formula){
 
 function zeroFill(number){
     var binaryValue = number.toString(2);
-
+    alert(binaryValue.length);
     var index = 0;
     for(index = 0; index < (32); index++){
         binaryValue = "0"+ binaryValue;
