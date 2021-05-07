@@ -12,7 +12,7 @@ function solveEquation(){
     var equation = document.getElementById('equation').value.replace(/([(!)])/g, ' $1 ').trim(); // adding spaces before every regex so that every alphabet character is unique.
     var formula = equation.replace(/\s+/g, ' ').trim().split(" "); // create array formula to parse and remove any excess whitespace.
 
-    document.getElementById('output').innerHTML = totalCount(formula);
+    document.getElementById('output').innerHTML = solve(formula);
 }
 
 /**
@@ -87,10 +87,9 @@ function unique(formula){
 function solve(formula){
     // use eval to solve conditional logic
     var temp = unique(formula);
-
+    alert(totalCount(formula));
     for(i = 0; i <= totalCount(formula); i++){
         alert(i.toString(2));
-        
     }
     /** 
     a   |  b
