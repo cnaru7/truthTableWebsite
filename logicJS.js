@@ -107,6 +107,12 @@ function zeroFill(number){
 
 function replaceElement(formula, swap, swapping){
     var index = 0;
+    if (swapping == 0){
+        swapping = "false";
+    }else{
+        swapping = "true";
+    }
+    
     for(index = 0; index < formula.length; index++){
         if(formula[index] == swap){
             formula[index] = swapping;
