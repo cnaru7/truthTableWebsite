@@ -84,6 +84,15 @@ function unique(formula){
     return temp;
 }
 
+function zeroFill(number){
+    var binaryValue = (number >>> 0).toString(2);
+
+    var index = 0;
+    for(index = 0; index < (32 - binaryValue.length); index++){
+        binaryValue = "0"+ binaryValue;
+    }
+}
+
 function solve(formula){
     // use eval to solve conditional logic
     //var temp = unique(formula);
@@ -92,7 +101,7 @@ function solve(formula){
     
     var i = 0;
     for(i = 0; i <= totalCount(formula); i++){
-        var binaryValue = (number >>> 0).toString(2);
+        var binaryValue = zeroFill(i);
         alert(binaryValue);
     }
     /** 
