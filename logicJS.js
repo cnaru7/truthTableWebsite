@@ -142,9 +142,8 @@ function solve(formula){
         for(j = 0; j < temp.length; j++){
             var strArray = replaceElement(tempFormula, temp[j], binaryValue.charAt((binaryValue.length-1) - j));
         }
-        alert(convertOperator(strArray).join().replaceAll(",", " "));
-        alert(eval(convertOperator(strArray).join().replaceAll(",", " ")));
-        // --WIP-- AFTER REPLACING WE NOW CONVERT ARRAY TO STRING AND USE EVAL FUNCTION TO RETRIEVE BOOLEAN OUTPUT.
+        alert(convertOperator(strArray).join().replaceAll(",", " ")); // prints string version of formula.
+        alert(eval(convertOperator(strArray).join().replaceAll(",", " "))); // evaluates formula.
     }
 
     //alert(strArray);
