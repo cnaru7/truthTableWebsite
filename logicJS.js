@@ -23,28 +23,24 @@ function solveEquation(){
  */
 function convertOperator(formula){
     var compare = ["&", "^", "and", "v", "or", "|", "->", "implies", "<=>", "<->", "bijection", "not", "~"];
-    var temp = [];
     var i = 0;
-
     for(i = 0 ; i < formula.length; i++){
         if(compare.includes(formula[i])){
              // if index in certian range convert to && (and), || (or), ! (negation), (!p || q) (implication), == (bijection) 
-            if(0 <= compare.indexOf(formula[i])  && compare.indexOf(formula[i]) < 3){ // and
-                temp.push("&&");
-            }else if(compare.indexOf(formula[i]) < 5){ // or
-                temp.push("||");
-            }else if(compare.indexOf(formula[i]) < 8){ // implies --WIP-- 
+            if((0 <= compare.indexOf(formula[i])) != -1 && (compare.indexOf(formula[i]) < 3) != -1){ // and
+                formula[i] = "&&";
+            }else if((compare.indexOf(formula[i]) < 5) != -1){ // or
                 formula[i] = "||";
-            }else if(compare.indexOf(formula[i]) < 11){ // bijection
-                temp.push("==");
-            }else if(compare.indexOf(formula[i]) <= 12){ // not
-                temp.push("!");
-            }else{ // add current element to temp
-                temp.push(formula[i]);
+            }else if((compare.indexOf(formula[i]) < 8)!= -1){ // implies --WIP-- 
+                formula[i] = "||";
+            }else if((compare.indexOf(formula[i]) < 11) != -1){ // bijection
+                formula[i] = "==";
+            }else if((compare.indexOf(formula[i]) <= 12) != -1){ // not
+                formula[i] = "!";
             }
         }
     }
-    return temp;
+    return formula;
 }
 
 /**
@@ -139,15 +135,19 @@ function solve(formula){
     // use eval to solve conditional logic
     var temp = unique(formula);
     var i = 0;
-    
-    for(i = 0; i <= totalCount(formula); i++){
+    for(i = 0; i < totalCount(formula); i++){
         var binaryValue = zeroFill(i);
+        var tempFormula = Array.from(formula);
         var j = 0;
         for(j = 0; j < temp.length; j++){
-            formula = replaceElement(formula, temp[j], binaryValue.charAt(j)); // RICHARD FIGURE OUT HOW TO REPLACE EVERY "SPECIFIC" ELEMENT IN AN ARRAY.
+            var strArray = replaceElement(tempFormula, temp[j], binaryValue.charAt((binaryValue.length-1) - j));
         }
+        alert(convertOperator(strArray).join().replaceAll(",", " "));
+        alert(eval(convertOperator(strArray).join().replaceAll(",", " ")));
         // --WIP-- AFTER REPLACING WE NOW CONVERT ARRAY TO STRING AND USE EVAL FUNCTION TO RETRIEVE BOOLEAN OUTPUT.
     }
+
+    //alert(strArray);
     /** 
     a   |  b
     ---------
